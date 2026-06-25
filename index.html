@@ -1,34 +1,34 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html>
+  <body>
     <div id="app"></div>
-    <script type="text/javascript">
-        // Select the div element with 'app' id
-        // Selecione o elemento div com o id 'app'
-        const app = document.getElementById('app');
 
-        // Create a new H1 element
-        // Crie um novo elemento H1
-        const header = document.createElement('h1');
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const domNode = document.getElementById('app');
+
+      function Header() {
+        return <h1>Develop. Preview. Ship.</h1>;
+        }
         
-        // Create a new text node for the H1 element
-        // Crie um novo nó de texto para o elemento H1
-        const text = 'Desenvolver. Visualizar. Enviar.';
+      function HomePage() {
+        return (
+            <div>
+            {/* Nesting the Header component */}
+            
+            <Header />
+            </div>
+        );
+        }
         
-        const headercontent = document.createTextNode(text);
-
-        // Append the text to the H1 element 
-        // Anexe o texto ao elemento H1
-        header.appendChild(headercontent);
-
-        // Place the H1 element inside the div
-        // Coloque o elemento H1 dentro da div
-        app.appendChild(header);
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+    </script>
+  </body>
+</html>
+        
     </script>
 </body>
 </html>
